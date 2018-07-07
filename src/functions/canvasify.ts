@@ -9,7 +9,7 @@ import { Canvas, CanvasRenderingContext2D, createCanvas, Image } from 'canvas';
 
 const asyncReadFile = util.promisify(fs.readFile);
 
-export type CanvasifyInput = Canvas | CanvasRenderingContext2D | string | Buffer;
+export type CanvasifyInput = Canvas | CanvasRenderingContext2D | string | Buffer | { width: number, height: number };
 
 export async function canvasify(input: CanvasifyInput): Promise<Canvas> {
 	if (input instanceof Canvas) {
@@ -68,6 +68,10 @@ export async function canvasify(input: CanvasifyInput): Promise<Canvas> {
 		} catch (e) {
 			throw new Error(`Failed to create image or canvas`);
 		}
+	}
+
+	if (typeof input === 'object' && !isNaN(input.width) && !isNaN(input.height)) {
+		return createCanvas(input.width, input.height);
 	}
 
 	throw new Error(`canvasify: Input parameter invalid`);

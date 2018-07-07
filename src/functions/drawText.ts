@@ -2,10 +2,9 @@
 'use strict';
 
 import { Canvas } from 'canvas';
-import * as tinycolor from 'tinycolor2';
 
 import { Box, Font, Offset, Rotation } from '../interfaces';
-import { Validator } from '../util';
+import { parseColor, Validator } from '../util';
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 
@@ -73,7 +72,7 @@ export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 	// Apply font
 	if (options.font) {
 		if (options.font.color) {
-			const color = tinycolor(options.font.color as any);
+			const color = parseColor(options.font.color);
 			if (!color.isValid()) {
 				throw new Error(`drawText: Template font color ${color} isn't valid`);
 			}

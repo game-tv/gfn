@@ -7,11 +7,6 @@ import { Validator } from '../util';
 import { canvasify, CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 
-export enum ImageRenderMode {
-	FIT = 'fit',
-	FILL = 'fill',
-}
-
 export interface DrawImageOptions {
 	/**
 	 * The canvas to draw on
@@ -35,6 +30,13 @@ export interface DrawImageOptions {
 	mode?: ImageRenderMode;
 }
 
+export enum ImageRenderMode {
+	FIT = 'fit',
+	FILL = 'fill',
+}
+
+export const ImageRenderModes = Object.values(ImageRenderMode);
+
 export async function drawImage(options: DrawImageOptions): Promise<Canvas> {
 	// Validation
 	Validator.inputObject(options, 'drawImage');
@@ -43,7 +45,7 @@ export async function drawImage(options: DrawImageOptions): Promise<Canvas> {
 		Validator.rotation(options.rotate, 'drawImage');
 	}
 	options.mode = options.mode || ImageRenderMode.FILL;
-	if (!Object.keys(ImageRenderMode).includes(options.mode)) {
+	if (!Object.values(ImageRenderMode).includes(options.mode)) {
 		throw new Error(`drawImage: Invalid mode ${options.mode}`);
 	}
 

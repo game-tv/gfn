@@ -4,7 +4,7 @@
 import { Canvas } from 'canvas';
 
 import { Box, Font, Rotation } from '../interfaces';
-import { Validator } from '../util';
+import { GfnColorInput, Validator } from '../util';
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 import { drawImage, ImageRenderMode } from './drawImage';
@@ -54,7 +54,7 @@ export interface DrawImageOrTextOptions {
 	/**
 	 * The background color
 	 */
-	bgColor?: ColorInput;
+	bgColor?: GfnColorInput;
 	/**
 	 * A mask that should be applied on the created context to cut it in shape
 	 */

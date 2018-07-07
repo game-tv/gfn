@@ -11,7 +11,7 @@ export async function contextify(input: CanvasifyInput): Promise<CanvasRendering
 	if (input instanceof Canvas) {
 		return input.getContext('2d');
 	}
-	if (typeof input === 'string' || input instanceof Buffer) {
+	if (typeof input === 'string' || input instanceof Buffer || typeof input === 'object' && !isNaN(input.width) && !isNaN(input.height)) {
 		return (await canvasify(input)).getContext('2d');
 	}
 

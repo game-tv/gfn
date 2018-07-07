@@ -1,10 +1,9 @@
 'use strict';
 
 import { Canvas, createCanvas } from 'canvas';
-import * as tinycolor from 'tinycolor2';
 
 import { Box, Font, Rotation } from '../interfaces';
-import { Validator } from '../util';
+import { GfnColorInput, parseColor, Validator } from '../util';
 import { canvasify, CanvasifyInput } from './canvasify';
 import { ImageRenderMode } from './drawImage';
 import { drawImageOrText } from './drawImageOrText';
@@ -37,7 +36,7 @@ export interface ComposeTemplate {
 	/**
 	 * The background color
 	 */
-	bgColor?: ColorInput;
+	bgColor?: GfnColorInput;
 	/**
 	 * A mask that should be applied on the created context to cut it in shape
 	 */
@@ -73,7 +72,7 @@ export async function compose(template: ComposeTemplate, options: ComposeOptions
 
 	// Apply the background color for the cutout area if present
 	if (template.bgColor) {
-		const bgColor = tinycolor(template.bgColor as any);
+		const bgColor = parseColor(template.bgColor);
 		if (bgColor.isValid()) {
 			ctx.fillStyle = bgColor.toHexString();
 			ctx.fillRect(0, 0, canvas.width, canvas.height);

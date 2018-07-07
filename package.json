@@ -1,6 +1,6 @@
 {
     "name": "@weeb_services/gfn",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Graphics functions for node canvas",
     "main": "build/index.js",
     "engines": {
@@ -23,6 +23,6 @@
         "tslint": "^5.10.0",
         "tslint-config-xo": "^1.4.0",
         "typescript": "^2.9.2"
-	},
-	"private": false
+    },
+    "private": false
 }

@@ -1,10 +1,12 @@
 'use strict';
 
+import { GfnColorInput } from '../util';
+
 export interface Font {
 	/**
 	 * Color for the font
 	 */
-	color?: ColorInput;
+	color?: GfnColorInput;
 	/**
 	 * Size of the font
 	 */
