@@ -1,0 +1,25 @@
+{
+	"extends": "tslint-config-xo",
+	"rules": {
+		"object-curly-spacing": [
+			true,
+			"always"
+		],
+		"triple-equals": [
+			true,
+			"allow-null-check"
+		],
+		"trailing-comma": [
+			true,
+			"always"
+		],
+		"prefer-const": true,
+		"variable-name": [
+			true,
+			"allow-leading-underscore",
+			"ban-keywords"
+		],
+		"ordered-imports": true,
+		"no-var-keyword": true
+	}
+}
