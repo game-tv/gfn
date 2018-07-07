@@ -9,7 +9,8 @@
     "author": "WeebServices <developers@weeb.sh>",
     "contributors": [
         "Wolke <wolke@weeb.sh>",
-        "Akio <akio@weeb.sh>"
+		"Akio <akio@weeb.sh>",
+		"LazyShpee <comemureravaud@gmail.com>"
     ],
     "license": "MIT",
     "dependencies": {
