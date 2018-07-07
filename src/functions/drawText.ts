@@ -4,33 +4,10 @@
 import { Canvas } from 'canvas';
 import * as tinycolor from 'tinycolor2';
 
-import { Box, Offset, Rotation } from '../interfaces';
+import { Box, Font, Offset, Rotation } from '../interfaces';
 import { Validator } from '../util';
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
-
-export interface Font {
-	/**
-	 * Color for the font
-	 */
-	color?: ColorInput;
-	/**
-	 * Size of the font
-	 */
-	size?: number;
-	/**
-	 * Family of the font
-	 */
-	family?: string;
-	/**
-	 *  Horizontal separation (pixels between words)
-	 */
-	hs?: number;
-	/**
-	 * Vertical separation (pixels between starts of a line, usually font size)
-	 */
-	vs?: number;
-}
 
 export interface DrawTextOptions {
 	/**

@@ -1,7 +1,7 @@
 {
     "name": "@weeb_services/gfn",
     "version": "1.0.0",
-    "description": "Graphic functions for node canvas",
+    "description": "Graphics functions for node canvas",
     "main": "build/index.js",
     "engines": {
         "node": ">=8.0.0"

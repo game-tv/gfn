@@ -3,12 +3,12 @@
 
 import { Canvas } from 'canvas';
 
-import { Box, Rotation } from '../interfaces';
+import { Box, Font, Rotation } from '../interfaces';
 import { Validator } from '../util';
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 import { drawImage, ImageRenderMode } from './drawImage';
-import { drawText, Font } from './drawText';
+import { drawText } from './drawText';
 
 export interface DrawImageOrTextOptions {
 	/**
