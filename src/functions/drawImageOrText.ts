@@ -82,9 +82,6 @@ export async function drawImageOrText(options: DrawImageOrTextOptions): Promise<
 			text: options.text,
 			box: options.boxText || options.box,
 			font: options.font,
-			offset: {
-				y: options.font.size,
-			},
 			rotate: options.rotate,
 			stroke: options.stroke,
 		});

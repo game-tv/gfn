@@ -1,6 +1,7 @@
 'use strict';
 
 import * as tinycolor from 'tinycolor2';
+import { ColorInput } from 'tinycolor2';
 
 export type GfnColorInput = ColorInput;
 
