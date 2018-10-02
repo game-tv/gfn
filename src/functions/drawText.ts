@@ -161,13 +161,13 @@ export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 			ctx.fillText(
 				word,
 				options.box.x + ((options.box.w - line.width) / 2) + xoffset + options.offset.x,
-				options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + (lindex * options.font.vs) + options.offset.y,
+				options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y,
 			);
 			if (options.stroke) {
 				ctx.strokeText(
 					word,
 					options.box.x + ((options.box.w - line.width) / 2) + xoffset + options.offset.x,
-					options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + (lindex * options.font.vs) + options.offset.y,
+					options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y,
 				);
 			}
 

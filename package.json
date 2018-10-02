@@ -1,6 +1,6 @@
 {
     "name": "@weeb_services/gfn",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Graphics functions for node canvas",
     "main": "build/index.js",
     "engines": {
@@ -9,21 +9,24 @@
     "author": "WeebServices <developers@weeb.sh>",
     "contributors": [
         "Wolke <wolke@weeb.sh>",
-		"Akio <akio@weeb.sh>",
-		"LazyShpee <comemureravaud@gmail.com>"
+        "Akio <akio@weeb.sh>",
+        "LazyShpee <comemureravaud@gmail.com>"
     ],
-    "license": "MIT",
+	"license": "MIT",
+	"scripts": {
+		"prepare": "rm -rf build/ && tsc"
+	},
     "dependencies": {
         "axios": "^0.18.0",
-        "canvas": "^2.0.0-alpha.12",
+        "canvas": "^2.0.0-alpha.17",
         "tinycolor2": "^1.4.1"
     },
     "devDependencies": {
         "@types/node": "^8.10.21",
-        "@types/tinycolor2": "^1.4.0",
-        "tslint": "^5.10.0",
+        "@types/tinycolor2": "^1.4.1",
+        "tslint": "^5.11.0",
         "tslint-config-xo": "^1.4.0",
-        "typescript": "^2.9.2"
+        "typescript": "^3.1.1"
     },
     "private": false
 }
