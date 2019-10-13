@@ -12,21 +12,22 @@
         "Akio <akio@weeb.sh>",
         "LazyShpee <comemureravaud@gmail.com>"
     ],
-	"license": "MIT",
-	"scripts": {
-		"prepare": "rm -rf build/ && tsc"
-	},
+    "license": "MIT",
+    "scripts": {
+		"build": "ayc build",
+        "prepublishOnly": "ayc clean build"
+    },
     "dependencies": {
-        "axios": "^0.18.0",
-        "canvas": "^2.0.0-alpha.17",
+        "axios": "^0.19.0",
+        "canvas": "^2.6.0",
         "tinycolor2": "^1.4.1"
     },
     "devDependencies": {
-        "@types/node": "^8.10.21",
-        "@types/tinycolor2": "^1.4.1",
-        "tslint": "^5.11.0",
-        "tslint-config-xo": "^1.4.0",
-        "typescript": "^3.1.1"
+        "@ayana/ts": "^1.1.0",
+        "@types/node": "^12.7.12",
+        "@types/tinycolor2": "^1.4.2",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.4"
     },
     "private": false
 }

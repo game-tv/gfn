@@ -5,6 +5,7 @@ import { Canvas } from 'canvas';
 
 import { Box, Font, Rotation } from '../interfaces';
 import { GfnColorInput, Validator } from '../util';
+
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 import { drawImage, ImageRenderMode } from './drawImage';

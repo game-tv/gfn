@@ -4,6 +4,7 @@ import { Canvas } from 'canvas';
 
 import { Box, Rotation } from '../interfaces';
 import { Validator } from '../util';
+
 import { canvasify, CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 
@@ -35,6 +36,7 @@ export enum ImageRenderMode {
 	FILL = 'fill',
 }
 
+// tslint:disable-next-line: variable-name
 export const ImageRenderModes = Object.values(ImageRenderMode);
 
 export async function drawImage(options: DrawImageOptions): Promise<Canvas> {
