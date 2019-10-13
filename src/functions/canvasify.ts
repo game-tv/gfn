@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import { URL } from 'url';
 import * as util from 'util';
 
-import axios from 'axios';
+import Axios from 'axios';
 import { Canvas, CanvasRenderingContext2D, createCanvas, Image } from 'canvas';
 
 const asyncReadFile = util.promisify(fs.readFile);
@@ -38,7 +38,7 @@ export async function canvasify(input: CanvasifyInput): Promise<Canvas> {
 
 			let response;
 			try {
-				response = await axios.get(url.href, { responseType: 'arraybuffer' });
+				response = await Axios.get(url.href, { responseType: 'arraybuffer' });
 			} catch (e) {
 				throw new Error('Failed to load image from URL');
 			}

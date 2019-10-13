@@ -3,6 +3,7 @@
 import { Canvas, createCanvas } from 'canvas';
 
 import { GfnColorInput, parseColor, Validator } from '../util';
+
 import { canvasify, CanvasifyInput } from './canvasify';
 
 export interface ColorizeOptions {
@@ -23,6 +24,7 @@ export enum ColorizeMode {
 	HSL_LUMINOSITY = 'hsl-luminosity',
 }
 
+// tslint:disable-next-line: variable-name
 export const ColorizeModes = Object.values(ColorizeMode);
 
 export async function colorize(options: ColorizeOptions): Promise<Canvas> {

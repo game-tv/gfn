@@ -5,6 +5,7 @@ import { Canvas } from 'canvas';
 
 import { Box, Font, Offset, Rotation } from '../interfaces';
 import { parseColor, Validator } from '../util';
+
 import { CanvasifyInput } from './canvasify';
 import { contextify } from './contextify';
 
@@ -42,13 +43,17 @@ export interface DrawTextOptions {
 interface Line {
 	width: number;
 	sizes: Array<{ width: number, height: number }>;
-	words: string[];
+	words: Array<string>;
 }
 
 /**
  * Draws text in a box on a canvas context, excess /\S/ are removed
+ *
+ * @param options The options
+ *
+ * @returns A promise with the drawn canvas
  */
-// tslint:disable-next-line:cyclomatic-complexity
+// tslint:disable-next-line:cyclomatic-complexity TODO: Decomplexify
 export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 	// Validation
 	if (!options.text) {
@@ -116,7 +121,7 @@ export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 	// Get text width from->to adding horizontal spacing
 	const getWidth = (from: number, to: number) => sizes.slice(from, to).reduce((a, c) => a + c.width + options.font.hs, 0);
 
-	const lines: Line[] = [];
+	const lines: Array<Line> = [];
 	// Current word
 	let current = 0;
 	// While we still have words left
@@ -141,7 +146,7 @@ export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 			}
 			size++;
 		}
-		lines.push({ width: width, sizes: sizes.slice(current, current + size), words: words.slice(current, current + size) });
+		lines.push({ width, sizes: sizes.slice(current, current + size), words: words.slice(current, current + size) });
 
 		current += size;
 	}
@@ -161,13 +166,13 @@ export async function drawText(options: DrawTextOptions): Promise<Canvas> {
 			ctx.fillText(
 				word,
 				options.box.x + ((options.box.w - line.width) / 2) + xoffset + options.offset.x,
-				options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y,
+				options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y
 			);
 			if (options.stroke) {
 				ctx.strokeText(
 					word,
 					options.box.x + ((options.box.w - line.width) / 2) + xoffset + options.offset.x,
-					options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y,
+					options.box.y + ((options.box.h - (lines.length * options.font.vs)) / 2) + ((lindex + 1) * options.font.vs) + options.offset.y
 				);
 			}
 

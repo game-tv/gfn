@@ -10,15 +10,15 @@ declare module 'canvas' {
 		public globalCompositeOperation: string;
 		public font: string;
 		public get canvas(): Canvas;
-		public drawImage(image: Canvas | Image, x: number, y: number, width?: number, height?: number);
-		public fillRect(x: number, y: number, width: number, height: number);
-		public translate(x: number, y: number);
-		public rotate(angle: number);
+		public drawImage(image: Canvas | Image, x: number, y: number, width?: number, height?: number): void;
+		public fillRect(x: number, y: number, width: number, height: number): void;
+		public translate(x: number, y: number): void;
+		public rotate(angle: number): void;
 		public measureText(text: string): { width: number, height: number };
-		public fillText(text: string, x: number, y: number);
-		public strokeText(text: string, x: number, y: number);
-		public save();
-		public restore();
+		public fillText(text: string, x: number, y: number): void;
+		public strokeText(text: string, x: number, y: number): void;
+		public save(): void;
+		public restore(): void;
 	}
 
 	export class Image {

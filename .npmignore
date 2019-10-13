@@ -6,3 +6,4 @@ tslint.json
 .gitignore
 tsconfig.json
 tslint.json
+.ayc_tsconfig.json
